@@ -4,6 +4,7 @@ import api from "../api";
 import NavBar from "../components/NavBar";
 import Pagination from "../components/Pagination";
 import Loading from "../components/Loading";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -61,14 +62,14 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="relative">
       <NavBar />
       {errorMessage && (
         <div
-          class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-amber-800 dark:text-amber-300"
+          className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-amber-800 dark:text-amber-300"
           role="alert"
         >
-          <span class="font-medium">Atenção!</span> "Não foi possível carregar
+          <span className="font-medium">Atenção!</span> "Não foi possível carregar
           os dados. Tente novamente ou contate o nosso time!"
         </div>
       )}
@@ -89,28 +90,8 @@ const Home = () => {
           </div>
         </>
       )}
-      {/* <footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
-        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2025{" "}
-            <a href="https://github.com/Danielleelara" class="hover:underline">
-              DanielleSouza
-            </a>
-            . All Rights Reserved.
-          </span>
-          <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-              <a
-                href="https://www.linkedin.com/in/danielle-souza-bb95b05b/"
-                class="hover:underline"
-              >
-                Contato
-              </a>
-            </li>
-          </ul>
-        </div>
-      </footer> */}
-    </>
+     <Footer/>
+    </div>
   );
 };
 
