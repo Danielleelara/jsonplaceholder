@@ -90,7 +90,9 @@ const Home = () => {
           </div>
         </>
       )}
+    <div className="mt-40">
      <Footer/>
+    </div>
     </div>
   );
 };

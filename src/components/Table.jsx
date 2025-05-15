@@ -91,6 +91,9 @@ const Table = ({ posts, users }) => {
           {filteredPost.map((item) =>
             currentPost?.id === item.id ? (
               <React.Fragment key={item.id}>
+                <form>
+                  
+                </form>
                 <tr
                   key={item.id}
                   className="bg-white border-b dark:bg-blue-100 dark:border-b-blue-800 border-gray-200 dark:text-blue-600 dark:focus:bg-sky-50 "
@@ -101,9 +104,11 @@ const Table = ({ posts, users }) => {
                   >
                     {item.id}
                   </th>
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 bg-sky-50" >
                     <input
-                      className="px-6 py-4 w-full border rounded-xs "
+                      required
+                      maxLength={50}
+                      className="px-6 py-4 w-full border rounded-lg"
                       name="title"
                       value={currentPost.title}
                       onChange={(e) => {
@@ -113,7 +118,9 @@ const Table = ({ posts, users }) => {
                   </td>
                   <td className="px-6 py-4">
                     <input
-                      className="px-6 py-4 w-full border rounded-xs"
+                      maxLength={200}
+                      className="px-6 py-4 w-full border rounded-lg"
+                      required
                       name="body"
                       value={currentPost.body}
                       onChange={(e) => {

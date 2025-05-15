@@ -56,9 +56,9 @@ const Pagination = ({ total, page, itemsPerPage = 10, onPageChange }) => {
           </li>
   
           {getPageNumbers().map((p, index) => (
-            <li key={index} className="h-8 border border-sky-50">
+            <li key={index} className="h-8 border border-sky-50 bg-sky-300">
               {p === "prevDots" || p === "nextDots" ? (
-                <span className="px-2">...</span>
+                <span className="px-2 border border-sky-300">...</span>
               ) : (
                 <button
                   onClick={() => onPageChange(p)}
