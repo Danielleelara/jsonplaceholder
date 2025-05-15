@@ -5,7 +5,8 @@ Este é um projeto front-end desenvolvido com React, que simula uma interface co
 
 # Tela
 
-![image](https://github.com/user-attachments/assets/fcd2ea95-7c61-4594-8c0d-de326bb43273)
+![image](https://github.com/user-attachments/assets/a64fe0ee-2f42-4aa7-b116-ddf77f899b35)
+
 
 ## 🔥 Funcionalidades
 
