@@ -91,9 +91,6 @@ const Table = ({ posts, users }) => {
           {filteredPost.map((item) =>
             currentPost?.id === item.id ? (
               <React.Fragment key={item.id}>
-                <form>
-                  
-                </form>
                 <tr
                   key={item.id}
                   className="bg-white border-b dark:bg-blue-100 dark:border-b-blue-800 border-gray-200 dark:text-blue-600 dark:focus:bg-sky-50 "
