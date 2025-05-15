@@ -48,7 +48,7 @@ O deploy é feito automaticamente na Vercel toda vez que há um push na branch m
 
 - Publicar na Vercel.
 
-Acesse o ambiente de produção em: https://jsonplaceholder-danielleelaras-projects.vercel.app/
+Acesse o ambiente de produção em: (https://jsonplaceholder-danielleelaras-projects.vercel.app/)
 
 🧾 Estrutura de Pastas
 
