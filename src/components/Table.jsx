@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import EditIcon from "../assets/EditIcon";
 import SaveIcon from "../assets/SaveIcon";
 
-const Table = ({ posts, users }) => {
+const Table = ({ posts }) => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState(() => posts);
   const [currentPost, setCurrentPost] = useState(null);
@@ -32,9 +32,8 @@ const Table = ({ posts, users }) => {
     (post) => post.title.includes(search) || post.body.includes(search)
   );
 
-
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-5" users={users} >
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
       <div className="py-4 bg-white">
         <div className="relative mt-1 bg-white">
           <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -101,7 +100,7 @@ const Table = ({ posts, users }) => {
                   >
                     {item.id}
                   </th>
-                  <td className="px-6 py-4 bg-sky-50" >
+                  <td className="px-6 py-4 bg-sky-50">
                     <input
                       required
                       maxLength={50}
@@ -127,7 +126,7 @@ const Table = ({ posts, users }) => {
                   </td>
                   <td className="px-6 py-4">{item.user}</td>
                   <td className="px-6 py-4">
-                    <SaveIcon onClick={() => handleSave()}/>
+                    <SaveIcon onClick={() => handleSave()} />
                   </td>
                 </tr>
               </React.Fragment>
@@ -159,7 +158,6 @@ const Table = ({ posts, users }) => {
             </tr>
           )}
         </tbody>
-  
       </table>
     </div>
   );

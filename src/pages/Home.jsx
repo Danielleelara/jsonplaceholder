@@ -69,13 +69,13 @@ const Home = () => {
           className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-amber-800 dark:text-amber-300"
           role="alert"
         >
-          <span className="font-medium">Atenção!</span> "Não foi possível carregar
-          os dados. Tente novamente ou contate o nosso time!"
+          <span className="font-medium">Atenção!</span> "Não foi possível
+          carregar os dados. Tente novamente ou contate o nosso time!"
         </div>
       )}
       {loading ? (
         <div className="flex justify-center items-center pt-48">
-          <Loading/>
+          <Loading />
         </div>
       ) : (
         <>
@@ -90,9 +90,9 @@ const Home = () => {
           </div>
         </>
       )}
-    <div className="mt-40">
-     <Footer/>
-    </div>
+      <div className="mt-40">
+        <Footer />
+      </div>
     </div>
   );
 };
