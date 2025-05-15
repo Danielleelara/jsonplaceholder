@@ -2,7 +2,7 @@ import React from "react";
 
 const EditIcon = ({ className = "", ...props }) => (
   <span
-    className={`inline-flex items-center justify-center text-gray-600 hover:text-sky-600 transition-colors ${className}`}
+    className={`inline-flex items-center justify-center text-gray-600 hover:text-sky-600 transition-colors cursor-pointer ${className}`}
     {...props}
   >
     <svg

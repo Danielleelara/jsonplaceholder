@@ -11,16 +11,21 @@ const Home = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
-  const [paginaAtual, setPaginaAtual] = useState(1);
-  const itensPorPagina = 5;
+  const [pagination, setPagination] = useState({
+    page: 1,
+    total: 0,
+    itemsPerPage: 5,
+  });
 
-  const getPostsList = async (page) => {
+  const getPostsList = async () => {
     setLoading(true);
+    const {page, itemsPerPage} = pagination
     try {
       const result = await api.get(
-        `/posts?_start=${page}&_limit=${itensPorPagina}`,
+        `/posts?_start=${page}&_limit=${itemsPerPage}`,
         { referrerPolicy: "unsafe-url" }
       );
+      setPagination((prev) => ({...prev, total: result.headers['x-total-count']}))
       setPosts(result.data);
     } catch {
       setErrorMessage(true);
@@ -42,8 +47,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getPostsList(paginaAtual);
-  }, [paginaAtual]);
+    getPostsList();
+  }, [pagination.page]);
 
   useEffect(() => {
     getUser();
@@ -57,7 +62,7 @@ const Home = () => {
   }));
 
   const handlePage = (page) => {
-    setPaginaAtual(page);
+    setPagination((prev) => ({...prev, page}))
     getPostsList(page);
   };
 
@@ -82,9 +87,9 @@ const Home = () => {
           <Table posts={postsWithUser} />
           <div className="flex justify-center m-7 ">
             <Pagination
-              total={200 / 5}
-              page={paginaAtual}
-              itemsPerPage={itensPorPagina}
+              total={pagination.total}
+              page={pagination.page}
+              itemsPerPage={pagination.itemsPerPage}
               onPageChange={(page) => handlePage(page)}
             />
           </div>

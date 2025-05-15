@@ -1,6 +1,6 @@
 import React from "react";
 
-const SaveIcon = ({ className = "w-5 h-5 text-blue-600", onClick }) => {
+const SaveIcon = ({ className = "w-5 h-5 text-blue-600 cursor-pointer", onClick }) => {
   return (
     <svg
       onClick={onClick}

@@ -41,7 +41,7 @@ const Pagination = ({ total, page, itemsPerPage = 10, onPageChange }) => {
             data-testId="button-test"
             onClick={handlePrevious}
             disabled={page === 1}
-            className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-sky-500 bg-white border border-e-0 border-sky-300 rounded-s-lg hover:bg-sky-100 disabled:opacity-50"
+            className="flex cursor-pointer items-center justify-center px-3 h-8 ms-0 leading-tight text-sky-500 bg-white border border-e-0 border-sky-300 rounded-s-lg hover:bg-sky-100 disabled:opacity-50"
           >
             <svg className="w-2.5 h-2.5" viewBox="0 0 6 10" fill="none">
               <path
@@ -58,12 +58,13 @@ const Pagination = ({ total, page, itemsPerPage = 10, onPageChange }) => {
         {getPageNumbers().map((p, index) => (
           <li key={index} className="h-8 border border-sky-50 bg-sky-300">
             {p === "prevDots" || p === "nextDots" ? (
-              <span className="px-2 border border-sky-300">...</span>
+              <span className="px-2 border border-sky-300 cursor-default">...</span>
             ) : (
               <button
                 data-testId="button-test2"
                 onClick={() => onPageChange(p)}
-                className={`px-3 h-8 flex items-center justify-center leading-tight border ${
+                disabled={p === page}
+                className={`px-3 h-8 flex items-center justify-center leading-tight border cursor-pointer ${
                   p === page
                     ? "text-sky-600 border-sky-300 bg-sky-50 dark:bg-sky-700 dark:text-white"
                     : "text-sky-500 bg-white border-sky-300 hover:bg-sky-100 hover:text-sky-700 dark:bg-sky-800 dark:border-sky-700 dark:text-sky-400 dark:hover:bg-sky-700 dark:hover:text-white"
@@ -80,7 +81,7 @@ const Pagination = ({ total, page, itemsPerPage = 10, onPageChange }) => {
             data-testId="button-test3"
             onClick={handleNext}
             disabled={page === totalPages}
-            className="flex items-center justify-center px-3 h-8 leading-tight text-sky-500 bg-white border border-sky-300 rounded-e-lg hover:bg-sky-100 disabled:opacity-50"
+            className="flex items-center cursor-pointer justify-center px-3 h-8 leading-tight text-sky-500 bg-white border border-sky-300 rounded-e-lg hover:bg-sky-100 disabled:opacity-50"
           >
             <svg className="w-2.5 h-2.5" viewBox="0 0 6 10" fill="none">
               <path
