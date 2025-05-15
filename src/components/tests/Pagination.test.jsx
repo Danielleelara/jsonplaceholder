@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import { describe, expect, test } from "vitest";
-import NavBar from "./NavBar";
-import Pagination from "./Pagination";
+import NavBar from "../NavBar";
+import Pagination from "../Pagination";
 
 describe("Pagination component", () => {
   test("renderiza botões da paginação", async () => {

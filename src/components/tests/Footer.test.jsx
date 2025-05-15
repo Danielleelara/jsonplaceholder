@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import { describe, expect, test } from "vitest";
-import Footer from "./Footer";
+import Footer from '../Footer';
 
 describe("Footer component", () => {
   test("renderiza o texto do rodapé", async () => {

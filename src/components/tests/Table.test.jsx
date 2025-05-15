@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import { describe, expect, test } from "vitest";
-import Table from "./Table";
+import Table from "../Table";
 
 describe("Table component", () => {
   test("renderiza a tabela", async () => {
