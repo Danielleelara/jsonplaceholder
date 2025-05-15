@@ -88,7 +88,7 @@ const Home = () => {
       ) : (
         <>
           <Table posts={postsWithUser} />
-          <div className="flex justify-center m-7 ">
+          <div className="flex justify-center m-7">
             <Pagination
               total={pagination.total}
               page={pagination.page}

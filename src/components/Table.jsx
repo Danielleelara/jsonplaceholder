@@ -163,7 +163,7 @@ const Table = ({ posts }) => {
               )
             )}
             {filteredPost.length === 0 && (
-              <tr className="bg-white border-b dark:bg-blue-100 dark:border-b-blue-800 border-gray-200 dark:text-blue-600 ">
+              <tr className="bg-sky-50 text-sky-900">
                 <td colSpan={5} className="px-6 py-4 text-center ">
                   Não foi encontrado nenhum resultado para essa pesquisa
                 </td>
