@@ -1,23 +1,26 @@
 
-📋 Projeto Posts
+# 📋 Projeto Posts
+
 Este é um projeto front-end desenvolvido com React, que simula uma interface de gerenciamento de dragões. Ele utiliza o Tailwind para estilizaçao, Vitest para rodar os testes de componentes, GitHubActions para rodar um jog a cada push para a branch principal "main".
 
-🐉 Tela
+# Tela
 
 ![alt text](src/assets/home.png)
 
-🔥 Funcionalidades
+## 🔥 Funcionalidades
 
 📋 Tabela exibindo a lista de posts (API real)
 ✏️ Edição inline de um item na tabela
 
-🛠️ Tecnologias e Ferramentas
+## 🛠️ Tecnologias e Ferramentas
+
 React
 Javascript
 Vitest
 Vercel (deploy automático)
 
-📦 Instalação e uso
+## 📦 Instalação e uso
+
 Clone o projeto e instale as dependências:
 
 git clone https://github.com/Danielleelara/jsonplaceholder
@@ -28,7 +31,7 @@ Para iniciar o projeto localmente:
 yarn start
 Acesse em: http://localhost:5173
 
-🧪 Testes
+ 🧪 Testes
 Para executar os testes unitários:
 
 yarn test
@@ -55,4 +58,5 @@ src/
 
 
 👩‍💻 Autora
+
 Desenvolvido por Danielle Souza
