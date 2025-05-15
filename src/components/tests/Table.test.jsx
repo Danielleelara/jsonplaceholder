@@ -14,7 +14,7 @@ describe("Table component", () => {
       },
     ];
 
-    render(<Table posts={data} />);
+    render(<Table posts={data} filteredPost={data}/>);
 
     const title = screen.getByText("qui est esse");
 

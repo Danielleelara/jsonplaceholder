@@ -58,7 +58,9 @@ const Pagination = ({ total, page, itemsPerPage = 10, onPageChange }) => {
         {getPageNumbers().map((p, index) => (
           <li key={index} className="h-8 border border-sky-50 bg-sky-300">
             {p === "prevDots" || p === "nextDots" ? (
-              <span className="px-2 border border-sky-300 cursor-default">...</span>
+              <span className="px-2 border border-sky-300 cursor-default">
+                ...
+              </span>
             ) : (
               <button
                 data-testid="button-test2"
