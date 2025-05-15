@@ -9,8 +9,12 @@ Este é um projeto front-end desenvolvido com React, que simula uma interface co
 
 ## 🔥 Funcionalidades
 
-- 📋 Tabela exibindo a lista de posts (API real)
-- ✏️ Edição inline de um item na tabela
+- Tabela exibindo a lista de postagens com id, título, texto, usuário e opção para editar/salvar
+- Edição inline de um item na tabela
+- Filtro de pesquisa por título ou texto
+- Paginação limitada a cinco itens por página, melhorando o tempo de resposta da API
+- Botões de edição e salvar para confirmar a edição de uma linha da tabela, sendo possível alterar apenas título e texto.
+- Loading para dar feedback da espera pela resposta e api e alerta em caso de erro nessa requisição
 
 ## 🛠️ Tecnologias e Ferramentas
 
