@@ -19,13 +19,16 @@ const Home = () => {
 
   const getPostsList = async () => {
     setLoading(true);
-    const {page, itemsPerPage} = pagination
+    const { page, itemsPerPage } = pagination;
     try {
       const result = await api.get(
         `/posts?_start=${page}&_limit=${itemsPerPage}`,
         { referrerPolicy: "unsafe-url" }
       );
-      setPagination((prev) => ({...prev, total: result.headers['x-total-count']}))
+      setPagination((prev) => ({
+        ...prev,
+        total: result.headers["x-total-count"],
+      }));
       setPosts(result.data);
     } catch {
       setErrorMessage(true);
@@ -48,7 +51,7 @@ const Home = () => {
 
   useEffect(() => {
     getPostsList();
-  }, [pagination.page]);
+  }, []);
 
   useEffect(() => {
     getUser();
@@ -62,7 +65,7 @@ const Home = () => {
   }));
 
   const handlePage = (page) => {
-    setPagination((prev) => ({...prev, page}))
+    setPagination((prev) => ({ ...prev, page }));
     getPostsList(page);
   };
 

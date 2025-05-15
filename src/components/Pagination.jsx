@@ -38,7 +38,7 @@ const Pagination = ({ total, page, itemsPerPage = 10, onPageChange }) => {
       <ul className="flex items-center -space-x-px h-8 text-sm">
         <li>
           <button
-            data-testId="button-test"
+            data-testid="button-test"
             onClick={handlePrevious}
             disabled={page === 1}
             className="flex cursor-pointer items-center justify-center px-3 h-8 ms-0 leading-tight text-sky-500 bg-white border border-e-0 border-sky-300 rounded-s-lg hover:bg-sky-100 disabled:opacity-50"
@@ -61,7 +61,7 @@ const Pagination = ({ total, page, itemsPerPage = 10, onPageChange }) => {
               <span className="px-2 border border-sky-300 cursor-default">...</span>
             ) : (
               <button
-                data-testId="button-test2"
+                data-testid="button-test2"
                 onClick={() => onPageChange(p)}
                 disabled={p === page}
                 className={`px-3 h-8 flex items-center justify-center leading-tight border cursor-pointer ${
@@ -78,7 +78,7 @@ const Pagination = ({ total, page, itemsPerPage = 10, onPageChange }) => {
 
         <li>
           <button
-            data-testId="button-test3"
+            data-testid="button-test3"
             onClick={handleNext}
             disabled={page === totalPages}
             className="flex items-center cursor-pointer justify-center px-3 h-8 leading-tight text-sky-500 bg-white border border-sky-300 rounded-e-lg hover:bg-sky-100 disabled:opacity-50"
