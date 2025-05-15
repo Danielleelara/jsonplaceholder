@@ -4,6 +4,7 @@ const EditIcon = ({ className = "", ...props }) => (
   <span
     className={`inline-flex items-center justify-center text-gray-600 hover:text-sky-600 transition-colors cursor-pointer ${className}`}
     {...props}
+    title="Editar"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
