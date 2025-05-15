@@ -10,12 +10,12 @@ Este é um projeto front-end desenvolvido com React, que simula uma interface co
 
 ## 🔥 Funcionalidades
 
-- Tabela exibindo a lista de postagens com id, título, texto, usuário e opção para editar/salvar
-- Edição inline de um item na tabela
-- Filtro de pesquisa por título ou texto
-- Paginação limitada a cinco itens por página, melhorando o tempo de resposta da API
-- Botões de edição e salvar para confirmar a edição de uma linha da tabela, sendo possível alterar apenas título e texto.
-- Loading para dar feedback da espera pela resposta e api e alerta em caso de erro nessa requisição
+- Tabela exibindo a lista de postagens com id, título, texto, usuário e ações
+- Edição inline na tabela
+- Filtro de pesquisa
+- Paginação limitada a cinco itens por página, otimizando o tempo de resposta da API
+- Botões de edição e salvar para confirmar a edição de uma linha na tabela, sendo possível alterar apenas título e texto.
+- Loading para dar feedback da espera pela resposta e api e alerta em caso de erro na requisição de dados
 
 ## 🛠️ Tecnologias e Ferramentas
 
@@ -35,7 +35,7 @@ cd jsonplaceholder
 yarn install
 
 Para iniciar o projeto localmente:
-yarn start
+yarn vite
 Acesse em: http://localhost:5173
 
 🧪 Testes
@@ -58,8 +58,8 @@ Acesse o ambiente de produção em: (https://jsonplaceholder-danielleelaras-proj
 🧾 Estrutura de Pastas
 
 src/
-├── assets/              # Ícones e imagens reutilizáveis
-├── components/          # Componentes reutilizáveis (Footer, Loading, NavBar, Pagination, Table)
+├── assets/              # Ícones reutilizáveis
+├── components/          # Componentes reutilizáveis (Footer, Loading, NavBar, Pagination e Table)
 │   └── __tests__/       # Testes unitários dos componentes
 └── pages/               # Páginas da aplicação (ex: Home)
 
