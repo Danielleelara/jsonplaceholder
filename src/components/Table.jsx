@@ -33,8 +33,8 @@ const Table = ({ posts }) => {
   );
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
-      <div className="py-4 bg-white">
+    <>    
+      <div className="py-4 m-5 mb-0 bg-white">
         <div className="relative mt-1 bg-white">
           <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg
@@ -63,6 +63,7 @@ const Table = ({ posts }) => {
           />
         </div>
       </div>
+    <div className="relative overflow-x-auto shadow-md rounded-lg bg-amber-700 m-5 mt-0">
       <form
         id="inline-form"
         onSubmit={(event) => {
@@ -171,6 +172,7 @@ const Table = ({ posts }) => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 
