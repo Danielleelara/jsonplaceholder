@@ -21,6 +21,20 @@ const Home = () => {
     const [data, setData] = useState(() => posts);
     const [currentPost, setCurrentPost] = useState(null);
 
+
+    const postsWithUser = data.map((item) => ({
+      id: item.id,
+      userId: item.userId,
+      title: item.title,
+      body: item.body,
+      user: users.find((i) => i.id === item.userId)?.name,
+    }));
+  
+    const filteredPost = postsWithUser.filter(
+      (post) => post.title.includes(search) || post.body.includes(search)
+    );
+  
+
   const getPostsList = async () => {
     setLoading(true);
     const { page, itemsPerPage } = pagination;
@@ -61,8 +75,8 @@ const Home = () => {
     };
   
     const handleSave = () => {
-      const index = data.findIndex((p) => p.id === currentPost.id);
-      const updatedPosts = data;
+      const index = filteredPost.findIndex((p) => p.id === currentPost.id);
+      const updatedPosts = filteredPost;
       updatedPosts[index] = currentPost;
       setData(updatedPosts);
       setCurrentPost(null);
@@ -74,9 +88,6 @@ const Home = () => {
       }
     }, [posts, search, setData]);
   
-    const filteredPost = data.filter(
-      (post) => post.title.includes(search) || post.body.includes(search)
-    );
 
   useEffect(() => {
     getPostsList();
@@ -86,12 +97,6 @@ const Home = () => {
     getUser();
   }, []);
 
-  const postsWithUser = posts.map((item) => ({
-    id: item.id,
-    title: item.title,
-    body: item.body,
-    user: users.find((i) => i.id === item.userId)?.name,
-  }));
 
   const handlePage = (page) => {
     setPagination((prev) => ({ ...prev, page }));
@@ -117,7 +122,7 @@ const Home = () => {
       ) : (
         <>
           <Filter search={search} setSearch={setSearch}/>
-          <Table posts={data} handleChange={handleChange} handleSave={handleSave} filteredPost={filteredPost} currentPost={currentPost} setCurrentPost={setCurrentPost}/> 
+          <Table handleChange={handleChange} handleSave={handleSave} filteredPost={filteredPost} currentPost={currentPost} setCurrentPost={setCurrentPost}/> 
           <div className="flex justify-center m-7">
             {filteredPost.length ? (
               <Pagination
