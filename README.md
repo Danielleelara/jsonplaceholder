@@ -9,15 +9,15 @@ Este é um projeto front-end desenvolvido com React, que simula uma interface co
 
 ## 🔥 Funcionalidades
 
-📋 Tabela exibindo a lista de posts (API real)
-✏️ Edição inline de um item na tabela
+- 📋 Tabela exibindo a lista de posts (API real)
+- ✏️ Edição inline de um item na tabela
 
 ## 🛠️ Tecnologias e Ferramentas
 
-React
-Javascript
-Vitest
-Vercel (deploy automático)
+- [React](https://reactjs.org/)
+- [Vitest](https://vitest.dev/)
+- [React Router](https://reactrouter.com/)
+- [Vercel](https://vercel.com/) (deploy automático)
 
 ## 📦 Instalação e uso
 
