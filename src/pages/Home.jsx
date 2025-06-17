@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 import Table from "../components/Table";
 import api from "../api";
 import NavBar from "../components/NavBar";
@@ -7,9 +7,18 @@ import Loading from "../components/Loading";
 import Footer from "../components/Footer";
 import Filter from "../components/Filter";
 
+const getUser = async () => {
+  const result = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = result.json();
+  if(data) {
+    return data
+  } 
+};
+
+const promise = getUser()
+
 const Home = () => {
   const [posts, setPosts] = useState([]);
-  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [pagination, setPagination] = useState({
@@ -18,9 +27,9 @@ const Home = () => {
     itemsPerPage: 5,
   });
     const [search, setSearch] = useState("");
+    const [currentPost, setCurrentPost] = useState(null);  
+    const users = use(promise);     
     const [data, setData] = useState(() => posts);
-    const [currentPost, setCurrentPost] = useState(null);
-
 
     const postsWithUser = data.map((item) => ({
       id: item.id,
@@ -55,18 +64,8 @@ const Home = () => {
     }
   };
 
-  const getUser = async () => {
-    setLoading(true);
-    try {
-      const result = await api.get("/users", { referrerPolicy: "unsafe-url" });
-      setUsers(result.data);
-    } catch {
-      setErrorMessage(true);
-    } finally {
-      setLoading(false);
-    }
-  };
-  
+
+ 
     const handleChange = (e) => {
       const { name, value } = e.target;
       setCurrentPost((prev) => {
@@ -91,10 +90,6 @@ const Home = () => {
 
   useEffect(() => {
     getPostsList();
-  }, []);
-
-  useEffect(() => {
-    getUser();
   }, []);
 
 
@@ -126,9 +121,9 @@ const Home = () => {
           <div className="flex justify-center m-7">
             {filteredPost.length ? (
               <Pagination
-                total={pagination.total}
-                page={pagination.page}
-                itemsPerPage={pagination.itemsPerPage}
+                total={pagination?.total}
+                page={pagination?.page}
+                itemsPerPage={pagination?.itemsPerPage}
                 onPageChange={(page) => handlePage(page)}
               />
             ): null}
